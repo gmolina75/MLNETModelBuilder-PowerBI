@@ -1,0 +1,52 @@
+# Normalizar finales de línea para archivos de texto
+* text=auto
+
+# Archivos de código fuente
+*.cs text eol=crlf
+*.csproj text eol=crlf
+*.sln text eol=crlf
+*.slnx text eol=crlf
+*.config text eol=crlf
+*.mbconfig text eol=crlf
+
+# Scripts
+*.py text eol=lf
+*.ps1 text eol=crlf
+*.sh text eol=lf
+*.md text eol=lf
+
+# Archivos de datos
+*.csv text eol=lf
+*.txt text eol=lf
+
+# Archivos de documentos ofimáticos (tratar como binarios)
+*.docx binary
+*.doc binary
+*.xlsx binary
+*.xls binary
+*.pbix binary
+*.pdf binary
+
+# Archivos de imágenes (tratar como binarios)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg text
+*.ico binary
+
+# Archivos de audio/video (tratar como binarios)
+*.mp3 binary
+*.mp4 binary
+*.wav binary
+*.avi binary
+
+# Modelos serializados de ML.NET (tratar como binarios)
+*.mlnet binary
+*.zip binary
+*.onnx binary
+
+# Archivos específicos del proyecto
+*.gdoc binary
+*.ini text eol=crlf
+desktop.ini text eol=crlf

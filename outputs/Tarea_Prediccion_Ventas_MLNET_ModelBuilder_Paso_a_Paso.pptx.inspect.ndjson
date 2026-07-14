@@ -1,0 +1,248 @@
+{"kind":"deck","id":"pr/wpq1xt","name":"Deck"}
+{"kind":"layout","layoutId":"08f81c6e-b0e3-4ea4-984c-3d49903221fb","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"3b27eb69-57b8-430c-b0ce-8e74621165ce","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/i1q0yy","slide":1,"title":"INTELIGENCIA DE NEGOCIOS","textShapes":8}
+{"kind":"shape","id":"sh/pgzy18ne","slide":1,"name":"pill-INTELIGENCIA DE NEGOCIOS","bbox":[52,48,260,36]}
+{"kind":"textbox","id":"sh/2d8z6d4n","slide":1,"name":"pill-text-INTELIGENCIA DE NEGOCIOS","text":"INTELIGENCIA DE NEGOCIOS","textPreview":"INTELIGENCIA DE NEGOCIOS","textChars":24,"textLines":1,"bbox":[64,55,236,22]}
+{"kind":"textbox","id":"sh/3ehgzi58","slide":1,"name":"cover-title","text":"Predicción de ventas\ncon ML.NET Model Builder","textPreview":"Predicción de ventas | con ML.NET Model Builder","textChars":45,"textLines":2,"bbox":[52,190,820,210]}
+{"kind":"textbox","id":"sh/gbqh43mx","slide":1,"name":"cover-subtitle","text":"Tarea académica y guía paso a paso","textPreview":"Tarea académica y guía paso a paso","textChars":34,"textLines":1,"bbox":[55,440,600,44]}
+{"kind":"textbox","id":"sh/hczyx8n2","slide":1,"name":"cover-detail","text":"Python · Visual Studio · ML.NET · Excel / Power BI","textPreview":"Python · Visual Studio · ML.NET · Excel / Power BI","textChars":50,"textLines":1,"bbox":[55,505,680,35]}
+{"kind":"shape","id":"sh/u9oz2t4r","slide":1,"name":"cover-accent","bbox":[970,80,210,520]}
+{"kind":"textbox","id":"sh/fahgvy5c","slide":1,"name":"cover-stat","text":"3.000","textPreview":"3.000","textChars":5,"textLines":1,"bbox":[995,205,160,72]}
+{"kind":"textbox","id":"sh/s76h0j6l","slide":1,"name":"cover-stat-label","text":"registros sintéticos","textPreview":"registros sintéticos","textChars":20,"textLines":1,"bbox":[994,280,162,40]}
+{"kind":"textbox","id":"sh/t8fyton6","slide":1,"name":"cover-label","text":"Variable objetivo","textPreview":"Variable objetivo","textChars":17,"textLines":1,"bbox":[994,385,162,26]}
+{"kind":"textbox","id":"sh/d87qdwna","slide":1,"name":"cover-target","text":"total_sales","textPreview":"total_sales","textChars":11,"textLines":1,"bbox":[985,420,182,48]}
+{"kind":"notes","id":"nt/i1q0yy","slide":1,"text":""}
+{"kind":"slide","id":"sl/8ba1p6","slide":2,"title":"El objetivo es completar un flujo predictivo de punta a punta","textShapes":18}
+{"kind":"textbox","id":"sh/c7e54fe1","slide":2,"name":"slide-title","text":"El objetivo es completar un flujo predictivo de punta a punta","textPreview":"El objetivo es completar un flujo predictivo de punta a punta","textChars":61,"textLines":1,"bbox":[50,34,1160,92]}
+{"kind":"textbox","id":"sh/r6l4baxg","slide":2,"name":"slide-subtitle","text":"Al finalizar, el estudiante habrá conectado datos, modelo, predicciones y visualización.","textPreview":"Al finalizar, el estudiante habrá conectado datos, modelo, predicciones y visualización.","textChars":88,"textLines":1,"bbox":[52,132,1120,38]}
+{"kind":"textbox","id":"sh/q5cn25wv","slide":2,"name":"slide-number","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1182,660,45,24]}
+{"kind":"shape","id":"sh/1cn6hkfi","slide":2,"name":"flow-0","bbox":[55,235,250,260]}
+{"kind":"textbox","id":"sh/0be58fex","slide":2,"name":"flow-kicker-0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[75,255,45,30]}
+{"kind":"textbox","id":"sh/za5ofaxc","slide":2,"name":"flow-head-0","text":"Generar","textPreview":"Generar","textChars":7,"textLines":1,"bbox":[75,305,205,40]}
+{"kind":"textbox","id":"sh/e9wn65wr","slide":2,"name":"flow-body-0","text":"Crear ventas sintéticas con reglas de negocio.","textPreview":"Crear ventas sintéticas con reglas de negocio.","textChars":46,"textLines":1,"bbox":[75,365,205,95]}
+{"kind":"textbox","id":"sh/hg3m50fe","slide":2,"name":"arrow-0","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[312,330,45,40]}
+{"kind":"shape","id":"sh/gfa5wvet","slide":2,"name":"flow-1","bbox":[360,235,250,260]}
+{"kind":"textbox","id":"sh/mpsr6xwv","slide":2,"name":"flow-kicker-1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[380,255,45,30]}
+{"kind":"textbox","id":"sh/na1sz2xg","slide":2,"name":"flow-head-1","text":"Entrenar","textPreview":"Entrenar","textChars":8,"textLines":1,"bbox":[380,305,205,40]}
+{"kind":"textbox","id":"sh/oba98ne1","slide":2,"name":"flow-body-1","text":"Usar AutoML para una regresión sobre total_sales.","textPreview":"Usar AutoML para una regresión sobre total_sales.","textChars":49,"textLines":1,"bbox":[380,365,205,95]}
+{"kind":"textbox","id":"sh/9cja1sfm","slide":2,"name":"arrow-1","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[617,330,45,40]}
+{"kind":"shape","id":"sh/adcraxw7","slide":2,"name":"flow-2","bbox":[665,235,250,260]}
+{"kind":"textbox","id":"sh/bels32xc","slide":2,"name":"flow-kicker-2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[685,255,45,30]}
+{"kind":"textbox","id":"sh/wfu9c7ex","slide":2,"name":"flow-head-2","text":"Predecir","textPreview":"Predecir","textChars":8,"textLines":1,"bbox":[685,305,205,40]}
+{"kind":"textbox","id":"sh/xg3a5cvi","slide":2,"name":"flow-body-2","text":"Comparar venta real vs. estimada en un CSV.","textPreview":"Comparar venta real vs. estimada en un CSV.","textChars":43,"textLines":1,"bbox":[685,365,205,95]}
+{"kind":"textbox","id":"sh/yhcrehw3","slide":2,"name":"arrow-2","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[922,330,45,40]}
+{"kind":"shape","id":"sh/jils7mdo","slide":2,"name":"flow-3","bbox":[970,235,250,260]}
+{"kind":"textbox","id":"sh/vm58vmtw","slide":2,"name":"flow-kicker-3","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[990,255,45,30]}
+{"kind":"textbox","id":"sh/ulwr2hcb","slide":2,"name":"flow-head-3","text":"Comunicar","textPreview":"Comunicar","textChars":9,"textLines":1,"bbox":[990,305,205,40]}
+{"kind":"textbox","id":"sh/h8nqxwbm","slide":2,"name":"flow-body-3","text":"Construir un dashboard y formular recomendaciones.","textPreview":"Construir un dashboard y formular recomendaciones.","textChars":50,"textLines":1,"bbox":[990,365,205,95]}
+{"kind":"notes","id":"nt/8ba1p6","slide":2,"text":""}
+{"kind":"slide","id":"sl/95kp91","slide":3,"title":"La entrega debe demostrar el proceso, no solo el resultado","textShapes":21}
+{"kind":"textbox","id":"sh/765ob2ps","slide":3,"name":"slide-title","text":"La entrega debe demostrar el proceso, no solo el resultado","textPreview":"La entrega debe demostrar el proceso, no solo el resultado","textChars":58,"textLines":1,"bbox":[50,34,1160,92]}
+{"kind":"textbox","id":"sh/87e547qd","slide":3,"name":"slide-subtitle","text":"Organice evidencias y artefactos para que el trabajo pueda reproducirse.","textPreview":"Organice evidencias y artefactos para que el trabajo pueda reproducirse.","textChars":72,"textLines":1,"bbox":[52,132,1120,38]}
+{"kind":"textbox","id":"sh/98n6dc7y","slide":3,"name":"slide-number","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1182,660,45,24]}
+{"kind":"shape","id":"sh/y1wnyx8b","slide":3,"name":"deliverable-0","bbox":[55,190,370,170]}
+{"kind":"textbox","id":"sh/z25o72pw","slide":3,"name":"deliverable-num-0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[77,210,44,28]}
+{"kind":"textbox","id":"sh/k3e507q1","slide":3,"name":"deliverable-head-0","text":"Prompt y script","textPreview":"Prompt y script","textChars":15,"textLines":1,"bbox":[77,252,326,34]}
+{"kind":"textbox","id":"sh/l4n69c7m","slide":3,"name":"deliverable-body-0","text":"generate_synthetic_sales.py","textPreview":"generate_synthetic_sales.py","textChars":27,"textLines":1,"bbox":[77,295,326,34]}
+{"kind":"shape","id":"sh/ixg7a1of","slide":3,"name":"deliverable-1","bbox":[460,190,370,170]}
+{"kind":"textbox","id":"sh/jypojmp0","slide":3,"name":"deliverable-num-1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[482,210,44,28]}
+{"kind":"textbox","id":"sh/zqh4n2xo","slide":3,"name":"deliverable-head-1","text":"Datos de entrenamiento","textPreview":"Datos de entrenamiento","textChars":22,"textLines":1,"bbox":[482,252,326,34]}
+{"kind":"textbox","id":"sh/ep8nuxw3","slide":3,"name":"deliverable-body-1","text":"ventas_sinteticas_2025.csv","textPreview":"ventas_sinteticas_2025.csv","textChars":26,"textLines":1,"bbox":[482,295,326,34]}
+{"kind":"shape","id":"sh/1szmpcfu","slide":3,"name":"deliverable-2","bbox":[865,190,370,170]}
+{"kind":"textbox","id":"sh/0rq5w7e9","slide":3,"name":"deliverable-num-2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[887,210,44,28]}
+{"kind":"textbox","id":"sh/neh4rmxk","slide":3,"name":"deliverable-head-2","text":"Evidencia del modelo","textPreview":"Evidencia del modelo","textChars":20,"textLines":1,"bbox":[887,252,326,34]}
+{"kind":"textbox","id":"sh/mt8nyhwf","slide":3,"name":"deliverable-body-2","text":"capturas + métricas","textPreview":"capturas + métricas","textChars":19,"textLines":1,"bbox":[887,295,326,34]}
+{"kind":"shape","id":"sh/9gjmtcfq","slide":3,"name":"deliverable-3","bbox":[55,395,370,170]}
+{"kind":"textbox","id":"sh/ofa50re5","slide":3,"name":"deliverable-num-3","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[77,415,44,28]}
+{"kind":"textbox","id":"sh/bi14vmxw","slide":3,"name":"deliverable-head-3","text":"Predicciones masivas","textPreview":"Predicciones masivas","textChars":20,"textLines":1,"bbox":[77,457,326,34]}
+{"kind":"textbox","id":"sh/ahsn2hwb","slide":3,"name":"deliverable-body-3","text":"resultados_prediccion.csv","textPreview":"resultados_prediccion.csv","textChars":25,"textLines":1,"bbox":[77,500,326,34]}
+{"kind":"shape","id":"sh/6dc7ulgj","slide":3,"name":"deliverable-4","bbox":[460,395,370,170]}
+{"kind":"textbox","id":"sh/7e58nqh4","slide":3,"name":"deliverable-num-4","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[482,415,44,28]}
+{"kind":"textbox","id":"sh/sfepwvyp","slide":3,"name":"deliverable-head-4","text":"Visualización","textPreview":"Visualización","textChars":13,"textLines":1,"bbox":[482,457,326,34]}
+{"kind":"textbox","id":"sh/tgnqp0za","slide":3,"name":"deliverable-body-4","text":"dashboard .xlsx o .pbix","textPreview":"dashboard .xlsx o .pbix","textChars":23,"textLines":1,"bbox":[482,500,326,34]}
+{"kind":"shape","id":"sh/i9c7qlgn","slide":3,"name":"deliverable-5","bbox":[865,395,370,170]}
+{"kind":"textbox","id":"sh/jal8jqhs","slide":3,"name":"deliverable-num-5","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[887,415,44,28]}
+{"kind":"textbox","id":"sh/kbupsbyd","slide":3,"name":"deliverable-head-5","text":"Síntesis","textPreview":"Síntesis","textChars":8,"textLines":1,"bbox":[887,457,326,34]}
+{"kind":"textbox","id":"sh/5c3qlgzy","slide":3,"name":"deliverable-body-5","text":"conclusiones y recomendaciones","textPreview":"conclusiones y recomendaciones","textChars":30,"textLines":1,"bbox":[887,500,326,34]}
+{"kind":"notes","id":"nt/95kp91","slide":3,"text":""}
+{"kind":"slide","id":"sl/k0k8wo","slide":4,"title":"La base sintética traduce reglas comerciales en 3.000 observaciones","textShapes":16}
+{"kind":"textbox","id":"sh/cr29ori5","slide":4,"name":"slide-title","text":"La base sintética traduce reglas comerciales en 3.000 observaciones","textPreview":"La base sintética traduce reglas comerciales en 3.000 observaciones","textChars":67,"textLines":1,"bbox":[50,34,1160,92]}
+{"kind":"textbox","id":"sh/bq9svmhk","slide":4,"name":"slide-subtitle","text":"Cobertura: todo 2025, cinco zonas ecuatorianas y cinco categorías de productos.","textPreview":"Cobertura: todo 2025, cinco zonas ecuatorianas y cinco categorías de productos.","textChars":79,"textLines":1,"bbox":[52,132,1120,38]}
+{"kind":"textbox","id":"sh/ap0rmh0z","slide":4,"name":"slide-number","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1182,660,45,24]}
+{"kind":"shape","id":"sh/lwba1gzm","slide":4,"name":"stat-0","bbox":[55,180,255,150]}
+{"kind":"textbox","id":"sh/kv2tsbi1","slide":4,"name":"stat-value-0","text":"3.000","textPreview":"3.000","textChars":5,"textLines":1,"bbox":[73,212,219,55]}
+{"kind":"textbox","id":"sh/zutsz6hg","slide":4,"name":"stat-label-0","text":"filas","textPreview":"filas","textChars":5,"textLines":1,"bbox":[73,272,219,30]}
+{"kind":"shape","id":"sh/ytkbq10b","slide":4,"name":"stat-1","bbox":[345,180,255,150]}
+{"kind":"textbox","id":"sh/9kva5gzy","slide":4,"name":"stat-value-1","text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[363,212,219,55]}
+{"kind":"textbox","id":"sh/8jmtwbid","slide":4,"name":"stat-label-1","text":"columnas","textPreview":"columnas","textChars":8,"textLines":1,"bbox":[363,272,219,30]}
+{"kind":"shape","id":"sh/ytcjux8f","slide":4,"name":"stat-2","bbox":[635,180,255,150]}
+{"kind":"textbox","id":"sh/julkn290","slide":4,"name":"stat-value-2","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[653,212,219,55]}
+{"kind":"textbox","id":"sh/kfu1wnql","slide":4,"name":"stat-label-2","text":"zonas","textPreview":"zonas","textChars":5,"textLines":1,"bbox":[653,272,219,30]}
+{"kind":"shape","id":"sh/lgn2psr6","slide":4,"name":"stat-3","bbox":[925,180,255,150]}
+{"kind":"textbox","id":"sh/6hwjyx8b","slide":4,"name":"stat-value-3","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[943,212,219,55]}
+{"kind":"textbox","id":"sh/7i5kr29w","slide":4,"name":"stat-label-3","text":"categorías","textPreview":"categorías","textChars":10,"textLines":1,"bbox":[943,272,219,30]}
+{"kind":"shape","id":"sh/8jel07qh","slide":4,"name":"data-rules","bbox":[55,375,1170,220]}
+{"kind":"textbox","id":"sh/tkn2tcr2","slide":4,"name":"data-rules-title","text":"Validaciones mínimas antes de entrenar","textPreview":"Validaciones mínimas antes de entrenar","textChars":38,"textLines":1,"bbox":[80,400,420,35]}
+{"kind":"textbox","id":"sh/mlsjmd87","slide":4,"name":"data-rules-body","text":"• Sin filas vacías ni ventas negativas.\n• Fechas en formato YYYY-MM-DD y decimales con punto.\n• Codificación UTF-8 y separador coma.\n• La columna objetivo es total_sales.","textPreview":"• Sin filas vacías ni ventas negativas. | • Fechas en formato YYYY-MM-DD y decimales con punto. | • Codificación UTF-8 y separador coma. ...","textChars":170,"textLines":4,"bbox":[80,455,520,120]}
+{"kind":"textbox","id":"sh/nm1kfi9s","slide":4,"name":"data-zones-title","text":"Cobertura geográfica","textPreview":"Cobertura geográfica","textChars":20,"textLines":1,"bbox":[690,405,260,28]}
+{"kind":"textbox","id":"sh/rqhgnepk","slide":4,"name":"data-zones","text":"Guayaquil · Quito · Cuenca\nManta · Ambato","textPreview":"Guayaquil · Quito · Cuenca | Manta · Ambato","textChars":41,"textLines":2,"bbox":[690,447,440,70]}
+{"kind":"textbox","id":"sh/q58zu9oz","slide":4,"name":"data-cats","text":"Alimentos · Bebidas · Limpieza\nCuidado Personal · Electrodomésticos","textPreview":"Alimentos · Bebidas · Limpieza | Cuidado Personal · Electrodomésticos","textChars":67,"textLines":2,"bbox":[690,525,470,60]}
+{"kind":"notes","id":"nt/k0k8wo","slide":4,"text":""}
+{"kind":"slide","id":"sl/vx3trx","slide":5,"title":"Antes de modelar, confirme que Visual Studio está preparado","textShapes":15}
+{"kind":"textbox","id":"sh/fq9g3m9g","slide":5,"name":"slide-title","text":"Antes de modelar, confirme que Visual Studio está preparado","textPreview":"Antes de modelar, confirme que Visual Studio está preparado","textChars":59,"textLines":1,"bbox":[50,34,1160,92]}
+{"kind":"textbox","id":"sh/grihwra1","slide":5,"name":"slide-subtitle","text":"Model Builder funciona en Visual Studio para Windows; si falla en 2026, Visual Studio 2022 puede instalarse en paralelo.","textPreview":"Model Builder funciona en Visual Studio para Windows; si falla en 2026, Visual Studio 2022 puede instalarse en paralelo.","textChars":120,"textLines":1,"bbox":[52,132,1120,38]}
+{"kind":"textbox","id":"sh/hsry5wrm","slide":5,"name":"slide-number","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1182,660,45,24]}
+{"kind":"shape","id":"sh/6lgfqhsz","slide":5,"name":"check-0","bbox":[55,205,565,150]}
+{"kind":"textbox","id":"sh/7mpgzmtk","slide":5,"name":"check-mark-0","text":"✓","textPreview":"✓","textChars":1,"textLines":1,"bbox":[77,235,45,45]}
+{"kind":"textbox","id":"sh/snixsra5","slide":5,"name":"check-head-0","text":"Windows","textPreview":"Windows","textChars":7,"textLines":1,"bbox":[140,230,430,34]}
+{"kind":"textbox","id":"sh/tory1wrq","slide":5,"name":"check-body-0","text":"Windows 11 de 64 bits recomendado.","textPreview":"Windows 11 de 64 bits recomendado.","textChars":34,"textLines":1,"bbox":[140,275,430,55]}
+{"kind":"shape","id":"sh/qhkz2ls3","slide":5,"name":"check-1","bbox":[660,205,565,150]}
+{"kind":"textbox","id":"sh/ritgb69o","slide":5,"name":"check-mark-1","text":"✓","textPreview":"✓","textChars":1,"textLines":1,"bbox":[682,235,45,45]}
+{"kind":"textbox","id":"sh/765ofyho","slide":5,"name":"check-head-1","text":"Carga de trabajo","textPreview":"Carga de trabajo","textChars":16,"textLines":1,"bbox":[745,230,430,34]}
+{"kind":"textbox","id":"sh/65wnmtg3","slide":5,"name":"check-body-1","text":"Desarrollo de escritorio de .NET.","textPreview":"Desarrollo de escritorio de .NET.","textChars":33,"textLines":1,"bbox":[745,275,430,55]}
+{"kind":"shape","id":"sh/ts76hoze","slide":5,"name":"check-2","bbox":[55,405,565,150]}
+{"kind":"textbox","id":"sh/s7e5ojy9","slide":5,"name":"check-mark-2","text":"✓","textPreview":"✓","textChars":1,"textLines":1,"bbox":[77,435,45,45]}
+{"kind":"textbox","id":"sh/fupojyhk","slide":5,"name":"check-head-2","text":"Componente","textPreview":"Componente","textChars":10,"textLines":1,"bbox":[140,430,430,34]}
+{"kind":"textbox","id":"sh/utgnqtgz","slide":5,"name":"check-body-2","text":"ML.NET Model Builder habilitado.","textPreview":"ML.NET Model Builder habilitado.","textChars":32,"textLines":1,"bbox":[140,475,430,55]}
+{"kind":"shape","id":"sh/hw76l8zq","slide":5,"name":"check-3","bbox":[660,405,565,150]}
+{"kind":"textbox","id":"sh/gvy5s3y5","slide":5,"name":"check-mark-3","text":"✓","textPreview":"✓","textChars":1,"textLines":1,"bbox":[682,435,45,45]}
+{"kind":"textbox","id":"sh/3yponihw","slide":5,"name":"check-head-3","text":"SDK","textPreview":"SDK","textChars":3,"textLines":1,"bbox":[745,430,430,34]}
+{"kind":"textbox","id":"sh/2xgnudgb","slide":5,"name":"check-body-3","text":"dotnet --info reconoce una versión instalada.","textPreview":"dotnet --info reconoce una versión instalada.","textChars":45,"textLines":1,"bbox":[745,475,430,55]}
+{"kind":"notes","id":"nt/vx3trx","slide":5,"text":""}
+{"kind":"slide","id":"sl/wtkpai","slide":6,"title":"Paso 1–3: abra el proyecto y defina una regresión","textShapes":14}
+{"kind":"textbox","id":"sh/4vexkjqd","slide":6,"name":"slide-title","text":"Paso 1–3: abra el proyecto y defina una regresión","textPreview":"Paso 1–3: abra el proyecto y defina una regresión","textChars":49,"textLines":1,"bbox":[50,34,1160,92]}
+{"kind":"textbox","id":"sh/3u5gre9s","slide":6,"name":"slide-subtitle","text":"La elección del escenario conecta el problema de negocio con el tipo de modelo.","textPreview":"La elección del escenario conecta el problema de negocio con el tipo de modelo.","textChars":79,"textLines":1,"bbox":[52,132,1120,38]}
+{"kind":"textbox","id":"sh/itwfit87","slide":6,"name":"slide-number","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1182,660,45,24]}
+{"kind":"shape","id":"sh/d07yx8ru","slide":6,"name":"step-1","bbox":[55,190,360,132]}
+{"kind":"shape","id":"sh/szyxo3q9","slide":6,"name":"step-num-1","bbox":[73,212,48,48]}
+{"kind":"textbox","id":"sh/rypgvy9o","slide":6,"name":"step-num-text-1","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[73,221,48,24]}
+{"kind":"textbox","id":"sh/qxgfmt83","slide":6,"name":"step-heading-1","text":"Abrir SalesPredictionApp","textPreview":"Abrir SalesPredictionApp","textChars":24,"textLines":1,"bbox":[137,208,262,30]}
+{"kind":"textbox","id":"sh/943yl4rq","slide":6,"name":"step-body-1","text":"En Visual Studio, abra SalesPredictionApp.csproj.","textPreview":"En Visual Studio, abra SalesPredictionApp.csproj.","textChars":49,"textLines":1,"bbox":[137,242,260,64]}
+{"kind":"shape","id":"sh/83uxszq5","slide":6,"name":"step-2","bbox":[460,190,360,132]}
+{"kind":"shape","id":"sh/i9gnat8z","slide":6,"name":"step-num-2","bbox":[478,212,48,48]}
+{"kind":"textbox","id":"sh/3ap4je9k","slide":6,"name":"step-num-text-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[478,221,48,24]}
+{"kind":"textbox","id":"sh/4by5cjq5","slide":6,"name":"step-heading-2","text":"Agregar el modelo","textPreview":"Agregar el modelo","textChars":17,"textLines":1,"bbox":[542,208,262,30]}
+{"kind":"textbox","id":"sh/5w7mlorq","slide":6,"name":"step-body-2","text":"Clic derecho en el proyecto → Agregar → Modelo de Machine Learning. Nombre: SalesModel.mbconfig.","textPreview":"Clic derecho en el proyecto → Agregar → Modelo de Machine Learning. Nombre: SalesModel.mbconfig.","textChars":96,"textLines":1,"bbox":[542,242,260,64]}
+{"kind":"shape","id":"sh/qxgnet8b","slide":6,"name":"step-3","bbox":[865,190,360,132]}
+{"kind":"shape","id":"sh/rypony9g","slide":6,"name":"step-num-3","bbox":[883,212,48,48]}
+{"kind":"textbox","id":"sh/szi5g3q1","slide":6,"name":"step-num-text-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[883,221,48,24]}
+{"kind":"textbox","id":"sh/d0r6p87m","slide":6,"name":"step-heading-3","text":"Elegir el escenario","textPreview":"Elegir el escenario","textChars":19,"textLines":1,"bbox":[947,208,262,30]}
+{"kind":"textbox","id":"sh/e10nid87","slide":6,"name":"step-body-3","text":"Seleccione Predicción de valor / Regresión porque total_sales es un valor numérico continuo.","textPreview":"Seleccione Predicción de valor / Regresión porque total_sales es un valor numérico continuo.","textChars":92,"textLines":1,"bbox":[947,242,260,64]}
+{"kind":"shape","id":"sh/f29orips","slide":6,"name":"why-regression","bbox":[55,390,1170,190]}
+{"kind":"textbox","id":"sh/b6t4zi50","slide":6,"name":"why-regression-title","text":"Decisión clave","textPreview":"Decisión clave","textChars":14,"textLines":1,"bbox":[80,420,260,34]}
+{"kind":"textbox","id":"sh/a5036dof","slide":6,"name":"why-regression-body","text":"No se busca clasificar una venta como “alta” o “baja”. El objetivo es estimar directamente el monto total de cada operación.","textPreview":"No se busca clasificar una venta como “alta” o “baja”. El objetivo es estimar directamente el monto total de cada operación.","textChars":124,"textLines":1,"bbox":[80,468,1080,70]}
+{"kind":"notes","id":"nt/wtkpai","slide":6,"text":""}
+{"kind":"slide","id":"sl/hkp39q","slide":7,"title":"Paso 4–5: entrene localmente con el CSV correcto","textShapes":9}
+{"kind":"textbox","id":"sh/gb6l4jmp","slide":7,"name":"slide-title","text":"Paso 4–5: entrene localmente con el CSV correcto","textPreview":"Paso 4–5: entrene localmente con el CSV correcto","textChars":48,"textLines":1,"bbox":[50,34,1160,92]}
+{"kind":"textbox","id":"sh/vqxkve54","slide":7,"name":"slide-subtitle","text":"Una configuración simple es suficiente para este conjunto de 3.000 registros.","textPreview":"Una configuración simple es suficiente para este conjunto de 3.000 registros.","textChars":77,"textLines":1,"bbox":[52,132,1120,38]}
+{"kind":"textbox","id":"sh/upo3294j","slide":7,"name":"slide-number","text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1182,660,45,24]}
+{"kind":"shape","id":"sh/5gzm1on6","slide":7,"name":"env","bbox":[55,185,515,400]}
+{"kind":"shape","id":"sh/4fql8jml","slide":7,"name":"pill-ENTORNO","bbox":[80,215,125,36]}
+{"kind":"textbox","id":"sh/3eh4ze50","slide":7,"name":"pill-text-ENTORNO","text":"ENTORNO","textPreview":"ENTORNO","textChars":7,"textLines":1,"bbox":[92,222,101,22]}
+{"kind":"textbox","id":"sh/id836t4f","slide":7,"name":"env-title","text":"Local (CPU)","textPreview":"Local (CPU)","textChars":11,"textLines":1,"bbox":[80,280,420,48]}
+{"kind":"textbox","id":"sh/lkv2p4n2","slide":7,"name":"env-body","text":"• Usa los recursos del equipo.\n• No requiere aprovisionar servicios en la nube.\n• Cierre aplicaciones pesadas antes de entrenar.","textPreview":"• Usa los recursos del equipo. | • No requiere aprovisionar servicios en la nube. | • Cierre aplicaciones pesadas antes de entrenar.","textChars":128,"textLines":3,"bbox":[80,350,420,150]}
+{"kind":"shape","id":"sh/kjmlwzmh","slide":7,"name":"data","bbox":[650,185,575,400]}
+{"kind":"shape","id":"sh/ud8fqdwj","slide":7,"name":"pill-DATOS","bbox":[675,215,110,36]}
+{"kind":"textbox","id":"sh/vehwzid4","slide":7,"name":"pill-text-DATOS","text":"DATOS","textPreview":"DATOS","textChars":5,"textLines":1,"bbox":[687,222,86,22]}
+{"kind":"textbox","id":"sh/wfqxsne9","slide":7,"name":"data-title","text":"ventas_sinteticas_2025.csv","textPreview":"ventas_sinteticas_2025.csv","textChars":26,"textLines":1,"bbox":[675,280,500,48]}
+{"kind":"textbox","id":"sh/hgze1svu","slide":7,"name":"data-body","text":"• Tipo de entrada: Archivo.\n• Revise la vista previa de columnas.\n• Etiqueta / Label: total_sales.\n• Confirme que el separador y los tipos sean correctos.","textPreview":"• Tipo de entrada: Archivo. | • Revise la vista previa de columnas. | • Etiqueta / Label: total_sales. | • Confirme que el separador y lo...","textChars":154,"textLines":4,"bbox":[675,350,500,165]}
+{"kind":"notes","id":"nt/hkp39q","slide":7,"text":""}
+{"kind":"slide","id":"sl/ipyvl2","slide":8,"title":"Paso 6–7: AutoML compara algoritmos; usted interpreta las métricas","textShapes":10}
+{"kind":"textbox","id":"sh/ed8jih4b","slide":8,"name":"slide-title","text":"Paso 6–7: AutoML compara algoritmos; usted interpreta las métricas","textPreview":"Paso 6–7: AutoML compara algoritmos; usted interpreta las métricas","textChars":66,"textLines":1,"bbox":[50,34,1160,92]}
+{"kind":"textbox","id":"sh/1gz2tw32","slide":8,"name":"slide-subtitle","text":"Para 3.000 registros, un tiempo de entrenamiento de 30–60 segundos suele ser suficiente.","textPreview":"Para 3.000 registros, un tiempo de entrenamiento de 30–60 segundos suele ser suficiente.","textChars":88,"textLines":1,"bbox":[52,132,1120,38]}
+{"kind":"textbox","id":"sh/0fq1krmh","slide":8,"name":"slide-number","text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1182,660,45,24]}
+{"kind":"shape","id":"sh/mh8jmh4n","slide":8,"name":"metric-r2","bbox":[640,195,585,105]}
+{"kind":"textbox","id":"sh/94j2xw3y","slide":8,"name":"metric-r2-h","text":"R²","textPreview":"R²","textChars":2,"textLines":1,"bbox":[665,218,90,35]}
+{"kind":"textbox","id":"sh/o3q1ormt","slide":8,"name":"metric-r2-b","text":"Más cercano a 1 indica mejor ajuste general.","textPreview":"Más cercano a 1 indica mejor ajuste general.","textChars":44,"textLines":1,"bbox":[765,220,420,45]}
+{"kind":"shape","id":"sh/3mx0j25o","slide":8,"name":"metric-rmse","bbox":[640,325,585,105]}
+{"kind":"textbox","id":"sh/ilojax43","slide":8,"name":"metric-rmse-h","text":"RMSE","textPreview":"RMSE","textChars":4,"textLines":1,"bbox":[665,348,90,35]}
+{"kind":"textbox","id":"sh/83m1gv6t","slide":8,"name":"metric-rmse-b","text":"Penaliza con más fuerza los errores grandes.","textPreview":"Penaliza con más fuerza los errores grandes.","textChars":44,"textLines":1,"bbox":[765,350,420,45]}
+{"kind":"shape","id":"sh/t4v2p07e","slide":8,"name":"metric-mae","bbox":[640,455,585,105]}
+{"kind":"textbox","id":"sh/614je5o3","slide":8,"name":"metric-mae-h","text":"MAE","textPreview":"MAE","textChars":3,"textLines":1,"bbox":[665,478,90,35]}
+{"kind":"textbox","id":"sh/72dknapo","slide":8,"name":"metric-mae-b","text":"Resume el error absoluto medio en moneda.","textPreview":"Resume el error absoluto medio en moneda.","textChars":41,"textLines":1,"bbox":[765,480,420,45]}
+{"kind":"textbox","id":"sh/g761kf65","slide":8,"name":"metric-note","text":"Capture la pantalla del mejor modelo y sus métricas para la entrega.","textPreview":"Capture la pantalla del mejor modelo y sus métricas para la entrega.","textChars":68,"textLines":1,"bbox":[640,590,585,35]}
+{"kind":"chart","id":"ch/76t03udo","slide":8,"name":"","chartType":"bar","bbox":[55,200,520,365]}
+{"kind":"notes","id":"nt/ipyvl2","slide":8,"text":""}
+{"kind":"slide","id":"sl/ape8jd","slide":9,"title":"Paso 8: conecte el código generado y elimine la simulación","textShapes":9}
+{"kind":"textbox","id":"sh/obat8bq9","slide":9,"name":"slide-title","text":"Paso 8: conecte el código generado y elimine la simulación","textPreview":"Paso 8: conecte el código generado y elimine la simulación","textChars":58,"textLines":1,"bbox":[50,34,1160,92]}
+{"kind":"textbox","id":"sh/3a1sz69o","slide":9,"name":"slide-subtitle","text":"Model Builder crea el modelo serializado y clases C# para entrenar y consumir predicciones.","textPreview":"Model Builder crea el modelo serializado y clases C# para entrenar y consumir predicciones.","textChars":91,"textLines":1,"bbox":[52,132,1120,38]}
+{"kind":"textbox","id":"sh/29sb6183","slide":9,"name":"slide-number","text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1182,660,45,24]}
+{"kind":"shape","id":"sh/18jaxgri","slide":9,"name":"generated","bbox":[55,190,510,370]}
+{"kind":"textbox","id":"sh/g7at4bqx","slide":9,"name":"generated-title","text":"Archivos esperados","textPreview":"Archivos esperados","textChars":18,"textLines":1,"bbox":[80,220,430,35]}
+{"kind":"textbox","id":"sh/f61sv69c","slide":9,"name":"generated-list","text":"• SalesModel.mlnet\n• SalesModel.consumption.cs\n• SalesModel.training.cs\n• SalesModel.evaluate.cs","textPreview":"• SalesModel.mlnet | • SalesModel.consumption.cs | • SalesModel.training.cs | • SalesModel.evaluate.cs","textChars":96,"textLines":4,"bbox":[80,280,430,180]}
+{"kind":"textbox","id":"sh/e58b218r","slide":9,"name":"generated-foot","text":"El nombre exacto depende del nombre asignado al modelo.","textPreview":"El nombre exacto depende del nombre asignado al modelo.","textChars":55,"textLines":1,"bbox":[80,485,430,45]}
+{"kind":"shape","id":"sh/l43u90rm","slide":9,"name":"program","bbox":[640,190,585,370]}
+{"kind":"textbox","id":"sh/k3utgvq1","slide":9,"name":"program-title","text":"Cambios en Program.cs","textPreview":"Cambios en Program.cs","textChars":21,"textLines":1,"bbox":[670,220,500,35]}
+{"kind":"textbox","id":"sh/e103m587","slide":9,"name":"program-list","text":"• Descomentar SalesModel.ModelInput.\n• Usar SalesModel.Predict(...).\n• Eliminar Random y el bloque ±5 %.\n• Mantener CultureInfo.InvariantCulture.","textPreview":"• Descomentar SalesModel.ModelInput. | • Usar SalesModel.Predict(...). | • Eliminar Random y el bloque ±5 %. | • Mantener CultureInfo.Inv...","textChars":145,"textLines":4,"bbox":[670,280,500,190]}
+{"kind":"textbox","id":"sh/zm94vapc","slide":9,"name":"program-warning","text":"Mientras exista la simulación, el CSV no representa un modelo real.","textPreview":"Mientras exista la simulación, el CSV no representa un modelo real.","textChars":67,"textLines":1,"bbox":[670,495,500,45]}
+{"kind":"notes","id":"nt/ape8jd","slide":9,"text":""}
+{"kind":"slide","id":"sl/wm3fwj","slide":10,"title":"La ejecución debe producir 3.000 predicciones comparables","textShapes":13}
+{"kind":"textbox","id":"sh/6hwvqhs7","slide":10,"name":"slide-title","text":"La ejecución debe producir 3.000 predicciones comparables","textPreview":"La ejecución debe producir 3.000 predicciones comparables","textChars":57,"textLines":1,"bbox":[50,34,1160,92]}
+{"kind":"textbox","id":"sh/t4ne1cbi","slide":10,"name":"slide-subtitle","text":"Compile sin AppHost si Windows bloquea el ejecutable nativo.","textPreview":"Compile sin AppHost si Windows bloquea el ejecutable nativo.","textChars":60,"textLines":1,"bbox":[52,132,1120,38]}
+{"kind":"textbox","id":"sh/s3edsrax","slide":10,"name":"slide-number","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1182,660,45,24]}
+{"kind":"shape","id":"sh/je5cv2tg","slide":10,"name":"commands","bbox":[55,185,1170,150]}
+{"kind":"textbox","id":"sh/idcvmxsv","slide":10,"name":"commands-text","text":"dotnet build -p:UseAppHost=false\n\ndotnet run -p:UseAppHost=false --no-launch-profile","textPreview":"dotnet build -p:UseAppHost=false |  | dotnet run -p:UseAppHost=false --no-launch-profile","textChars":84,"textLines":3,"bbox":[85,215,1080,90]}
+{"kind":"shape","id":"sh/5gnuxcbm","slide":10,"name":"col-0","bbox":[55,395,255,130]}
+{"kind":"textbox","id":"sh/4fedo7a1","slide":10,"name":"col-name-0","text":"real_sales","textPreview":"real_sales","textChars":10,"textLines":1,"bbox":[70,425,225,35]}
+{"kind":"textbox","id":"sh/3apw76tk","slide":10,"name":"col-desc-0","text":"valor observado","textPreview":"valor observado","textChars":15,"textLines":1,"bbox":[70,470,225,28]}
+{"kind":"shape","id":"sh/29gvy1sf","slide":10,"name":"col-1","bbox":[345,395,255,130]}
+{"kind":"textbox","id":"sh/obulor2p","slide":10,"name":"col-name-1","text":"predicted_sales","textPreview":"predicted_sales","textChars":15,"textLines":1,"bbox":[360,425,225,35]}
+{"kind":"textbox","id":"sh/pc32xc3a","slide":10,"name":"col-desc-1","text":"estimación del modelo","textPreview":"estimación del modelo","textChars":21,"textLines":1,"bbox":[360,470,225,28]}
+{"kind":"shape","id":"sh/29c3mhkj","slide":10,"name":"col-2","bbox":[635,395,255,130]}
+{"kind":"textbox","id":"sh/3alkvml4","slide":10,"name":"col-name-2","text":"difference","textPreview":"difference","textChars":10,"textLines":1,"bbox":[650,425,225,35]}
+{"kind":"textbox","id":"sh/gna1k72t","slide":10,"name":"col-desc-2","text":"desviación monetaria","textPreview":"desviación monetaria","textChars":20,"textLines":1,"bbox":[650,470,225,28]}
+{"kind":"shape","id":"sh/1oj2tc3y","slide":10,"name":"col-3","bbox":[925,395,255,130]}
+{"kind":"textbox","id":"sh/elsjixkn","slide":10,"name":"col-name-3","text":"percentage_error","textPreview":"percentage_error","textChars":16,"textLines":1,"bbox":[940,425,225,35]}
+{"kind":"textbox","id":"sh/fm1kr2l8","slide":10,"name":"col-desc-3","text":"error relativo","textPreview":"error relativo","textChars":14,"textLines":1,"bbox":[940,470,225,28]}
+{"kind":"textbox","id":"sh/sja1g72h","slide":10,"name":"row-check","text":"Control final: 3.000 filas de datos + 1 encabezado.","textPreview":"Control final: 3.000 filas de datos + 1 encabezado.","textChars":51,"textLines":1,"bbox":[55,570,1170,36]}
+{"kind":"notes","id":"nt/wm3fwj","slide":10,"text":""}
+{"kind":"slide","id":"sl/0e9sed","slide":11,"title":"El dashboard convierte el error del modelo en decisiones de negocio","textShapes":11}
+{"kind":"textbox","id":"sh/8ru5wnm5","slide":11,"name":"slide-title","text":"El dashboard convierte el error del modelo en decisiones de negocio","textPreview":"El dashboard convierte el error del modelo en decisiones de negocio","textChars":67,"textLines":1,"bbox":[50,34,1160,92]}
+{"kind":"textbox","id":"sh/nql4nilk","slide":11,"name":"slide-subtitle","text":"Compare ventas reales y predichas por tiempo, categoría y zona.","textPreview":"Compare ventas reales y predichas por tiempo, categoría y zona.","textChars":63,"textLines":1,"bbox":[52,132,1120,38]}
+{"kind":"textbox","id":"sh/mpcnud4f","slide":11,"name":"slide-number","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1182,660,45,24]}
+{"kind":"shape","id":"sh/0na5s3m9","slide":11,"name":"q-0","bbox":[720,195,505,78]}
+{"kind":"textbox","id":"sh/zm14jylo","slide":11,"name":"q-head-0","text":"¿Cuándo?","textPreview":"¿Cuándo?","textChars":8,"textLines":1,"bbox":[742,210,110,25]}
+{"kind":"textbox","id":"sh/y1snqd43","slide":11,"name":"q-body-0","text":"Tendencia mensual y estacionalidad.","textPreview":"Tendencia mensual y estacionalidad.","textChars":35,"textLines":1,"bbox":[860,210,335,42]}
+{"kind":"shape","id":"sh/5kn6xc3y","slide":11,"name":"q-1","bbox":[720,295,505,78]}
+{"kind":"textbox","id":"sh/4je5472d","slide":11,"name":"q-head-1","text":"¿Dónde?","textPreview":"¿Dónde?","textChars":7,"textLines":1,"bbox":[742,310,110,25]}
+{"kind":"textbox","id":"sh/e1kvaxob","slide":11,"name":"q-body-1","text":"Comparación por zona y almacén.","textPreview":"Comparación por zona y almacén.","textChars":31,"textLines":1,"bbox":[860,310,335,42]}
+{"kind":"shape","id":"sh/z2twj25w","slide":11,"name":"q-2","bbox":[720,395,505,78]}
+{"kind":"textbox","id":"sh/032dc76h","slide":11,"name":"q-head-2","text":"¿Qué?","textPreview":"¿Qué?","textChars":5,"textLines":1,"bbox":[742,410,110,25]}
+{"kind":"textbox","id":"sh/14velcnm","slide":11,"name":"q-body-2","text":"Categoría y producto con mayor error.","textPreview":"Categoría y producto con mayor error.","textChars":37,"textLines":1,"bbox":[860,410,335,42]}
+{"kind":"shape","id":"sh/qdkv6doz","slide":11,"name":"q-3","bbox":[720,495,505,78]}
+{"kind":"textbox","id":"sh/rytwfi5k","slide":11,"name":"q-head-3","text":"¿Qué hacer?","textPreview":"¿Qué hacer?","textChars":11,"textLines":1,"bbox":[742,510,110,25]}
+{"kind":"textbox","id":"sh/cz2d8n65","slide":11,"name":"q-body-3","text":"Inventario, metas y seguimiento comercial.","textPreview":"Inventario, metas y seguimiento comercial.","textChars":42,"textLines":1,"bbox":[860,510,335,42]}
+{"kind":"chart","id":"ch/tov61wva","slide":11,"name":"","chartType":"line","bbox":[55,195,610,390]}
+{"kind":"notes","id":"nt/0e9sed","slide":11,"text":""}
+{"kind":"slide","id":"sl/qlfuk6","slide":12,"title":"Tres riesgos pueden invalidar la entrega si no se controlan","textShapes":18}
+{"kind":"textbox","id":"sh/lgbetwz2","slide":12,"name":"slide-title","text":"Tres riesgos pueden invalidar la entrega si no se controlan","textPreview":"Tres riesgos pueden invalidar la entrega si no se controlan","textChars":59,"textLines":1,"bbox":[50,34,1160,92]}
+{"kind":"textbox","id":"sh/ytkvyhgb","slide":12,"name":"slide-subtitle","text":"Revise el estado real del proyecto antes de capturar evidencias o presentar resultados.","textPreview":"Revise el estado real del proyecto antes de capturar evidencias o presentar resultados.","textChars":87,"textLines":1,"bbox":[52,132,1120,38]}
+{"kind":"textbox","id":"sh/jetwrmhw","slide":12,"name":"slide-number","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1182,660,45,24]}
+{"kind":"shape","id":"sh/wr2dwry5","slide":12,"name":"risk-0","bbox":[55,200,365,370]}
+{"kind":"textbox","id":"sh/xsbupwzq","slide":12,"name":"risk-num-0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[77,225,48,28]}
+{"kind":"textbox","id":"sh/apkvuhgf","slide":12,"name":"risk-head-0","text":"Predicción simulada","textPreview":"Predicción simulada","textChars":19,"textLines":1,"bbox":[77,280,320,58]}
+{"kind":"textbox","id":"sh/bqtcnmh0","slide":12,"name":"risk-body-0","text":"SalesPredictionApp usa ±5 % aleatorio hasta conectar SalesModel.Predict.","textPreview":"SalesPredictionApp usa ±5 % aleatorio hasta conectar SalesModel.Predict.","textChars":72,"textLines":1,"bbox":[77,355,320,85]}
+{"kind":"textbox","id":"sh/onids7y9","slide":12,"name":"risk-action-label-0","text":"ACCIÓN","textPreview":"ACCIÓN","textChars":6,"textLines":1,"bbox":[77,466,100,24]}
+{"kind":"textbox","id":"sh/9orulczu","slide":12,"name":"risk-action-0","text":"Eliminar la simulación después de entrenar.","textPreview":"Eliminar la simulación después de entrenar.","textChars":43,"textLines":1,"bbox":[77,495,320,50]}
+{"kind":"shape","id":"sh/5gr25gf6","slide":12,"name":"risk-1","bbox":[450,200,365,370]}
+{"kind":"textbox","id":"sh/kfilcbyl","slide":12,"name":"risk-num-1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[472,225,48,28]}
+{"kind":"textbox","id":"sh/jepk36x0","slide":12,"name":"risk-head-1","text":"Rutas no portables","textPreview":"Rutas no portables","textChars":18,"textLines":1,"bbox":[472,280,320,58]}
+{"kind":"textbox","id":"sh/idgja1gf","slide":12,"name":"risk-body-1","text":"Los .mbconfig generados pueden guardar rutas absolutas locales.","textPreview":"Los .mbconfig generados pueden guardar rutas absolutas locales.","textChars":63,"textLines":1,"bbox":[472,355,320,85]}
+{"kind":"textbox","id":"sh/xc721wfu","slide":12,"name":"risk-action-label-1","text":"ACCIÓN","textPreview":"ACCIÓN","textChars":6,"textLines":1,"bbox":[472,466,100,24]}
+{"kind":"textbox","id":"sh/wby18ryp","slide":12,"name":"risk-action-1","text":"Actualizar las rutas al mover el repositorio.","textPreview":"Actualizar las rutas al mover el repositorio.","textChars":45,"textLines":1,"bbox":[472,495,320,50]}
+{"kind":"shape","id":"sh/vapkzmx4","slide":12,"name":"risk-2","bbox":[845,200,365,370]}
+{"kind":"textbox","id":"sh/a9gj6hgj","slide":12,"name":"risk-num-2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[867,225,48,28]}
+{"kind":"textbox","id":"sh/9872xwfy","slide":12,"name":"risk-head-2","text":"Compatibilidad / paquetes","textPreview":"Compatibilidad / paquetes","textChars":25,"textLines":1,"bbox":[867,280,320,58]}
+{"kind":"textbox","id":"sh/8ne14ryd","slide":12,"name":"risk-body-2","text":"Model Builder o NuGet pueden faltar o no cargar en VS 2026.","textPreview":"Model Builder o NuGet pueden faltar o no cargar en VS 2026.","textChars":59,"textLines":1,"bbox":[867,355,320,85]}
+{"kind":"textbox","id":"sh/0rilkr69","slide":12,"name":"risk-action-label-2","text":"ACCIÓN","textPreview":"ACCIÓN","textChars":6,"textLines":1,"bbox":[867,466,100,24]}
+{"kind":"textbox","id":"sh/1sr2dwnu","slide":12,"name":"risk-action-2","text":"Probar VS 2022 en paralelo y restaurar paquetes.","textPreview":"Probar VS 2022 en paralelo y restaurar paquetes.","textChars":48,"textLines":1,"bbox":[867,495,320,50]}
+{"kind":"notes","id":"nt/qlfuk6","slide":12,"text":""}
+{"kind":"slide","id":"sl/loa0f2","slide":13,"title":"CIERRE","textShapes":5}
+{"kind":"shape","id":"sh/i1kzi5sf","slide":13,"name":"pill-CIERRE","bbox":[55,50,100,36]}
+{"kind":"textbox","id":"sh/5obidkr6","slide":13,"name":"pill-text-CIERRE","text":"CIERRE","textPreview":"CIERRE","textChars":6,"textLines":1,"bbox":[67,57,76,22]}
+{"kind":"textbox","id":"sh/k32hkfal","slide":13,"name":"close-title","text":"La tarea está completa cuando\nel flujo puede repetirse","textPreview":"La tarea está completa cuando | el flujo puede repetirse","textChars":54,"textLines":2,"bbox":[55,185,980,155]}
+{"kind":"textbox","id":"sh/7qd0fa9w","slide":13,"name":"close-body","text":"Datos válidos → modelo evaluado → predicciones reales → dashboard → recomendaciones","textPreview":"Datos válidos → modelo evaluado → predicciones reales → dashboard → recomendaciones","textChars":83,"textLines":1,"bbox":[58,390,1080,60]}
+{"kind":"textbox","id":"sh/6pkzm5sr","slide":13,"name":"close-check","text":"✓ CSV de entrenamiento\n✓ Capturas y métricas\n✓ resultados_prediccion.csv\n✓ Dashboard y conclusiones","textPreview":"✓ CSV de entrenamiento | ✓ Capturas y métricas | ✓ resultados_prediccion.csv | ✓ Dashboard y conclusiones","textChars":99,"textLines":4,"bbox":[58,500,650,125]}
+{"kind":"textbox","id":"sh/tsvihkr2","slide":13,"name":"close-final","text":"No entregue resultados simulados como si fueran predicciones del modelo.","textPreview":"No entregue resultados simulados como si fueran predicciones del modelo.","textChars":72,"textLines":1,"bbox":[760,510,420,90]}
+{"kind":"notes","id":"nt/loa0f2","slide":13,"text":""}
