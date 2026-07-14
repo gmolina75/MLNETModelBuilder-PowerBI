@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Predicción de Ventas</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --success: #16a34a;
+            --danger: #dc2626;
+            --warning: #ca8a04;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --border: #e2e8f0;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 4px solid var(--primary);
+            margin-bottom: 2rem;
+        }
+        h1 { margin: 0; font-size: 2.2rem; color: var(--primary); }
+        .subtitle { color: var(--muted); margin-top: 0.5rem; font-size: 1.1rem; }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-2px); }
+        .card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .card .value {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .card .value.positive { color: var(--success); }
+        .card .value.negative { color: var(--danger); }
+        .card .value.warning { color: var(--warning); }
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .chart-container {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .chart-container.full-width {
+            grid-column: 1 / -1;
+        }
+        .chart-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        th, td { padding: 0.875rem 1rem; text-align: right; }
+        th {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        td { border-bottom: 1px solid var(--border); }
+        tr:hover { background: #f1f5f9; }
+        td:first-child, th:first-child { text-align: left; }
+        .insights {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .insights h2 { color: var(--primary); margin-top: 0; }
+        .insights h3 { color: var(--secondary); margin-top: 1.5rem; }
+        .insights ul { padding-left: 1.25rem; }
+        .insights li { margin-bottom: 0.75rem; }
+        footer {
+            text-align: center;
+            color: var(--muted);
+            padding: 2rem 0;
+            font-size: 0.875rem;
+        }
+        @media (max-width: 768px) {
+            .chart-grid { grid-template-columns: 1fr; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard de Predicción de Ventas</h1>
+            <div class="subtitle">Ventas reales vs. predichas · Análisis por mes, categoría y zona</div>
+        </header>
+
+        <div class="kpi-grid">
+            <div class="card">
+                <h3>Registros Analizados</h3>
+                <div class="value">3,000</div>
+            </div>
+            <div class="card">
+                <h3>Ventas Reales Totales</h3>
+                <div class="value">$391,447.06</div>
+            </div>
+            <div class="card">
+                <h3>Ventas Predichas Totales</h3>
+                <div class="value">$187,175.13</div>
+            </div>
+            <div class="card">
+                <h3>Diferencia Total</h3>
+                <div class="value positive">$204,271.93</div>
+            </div>
+            <div class="card">
+                <h3>Error Porcentual Promedio</h3>
+                <div class="value negative">206.32%</div>
+            </div>
+            <div class="card">
+                <h3>R² del Modelo</h3>
+                <div class="value negative">0.0148</div>
+            </div>
+            <div class="card">
+                <h3>MAE</h3>
+                <div class="value">$96.27</div>
+            </div>
+            <div class="card">
+                <h3>RMSE</h3>
+                <div class="value">$371.26</div>
+            </div>
+        </div>
+
+        <div class="chart-grid">
+            <div class="chart-container full-width">
+                <div class="chart-title">Ventas Reales vs. Predichas por Mes</div>
+                <canvas id="salesMonthChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Error Promedio de Predicción por Mes</div>
+                <canvas id="errorMonthChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Predicción por Categoría</div>
+                <canvas id="categoryChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Error Promedio por Categoría</div>
+                <canvas id="errorCategoryChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Predicción por Zona</div>
+                <canvas id="zoneChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Error Promedio por Zona</div>
+                <canvas id="errorZoneChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Top 10 Productos con Mayor Venta Estimada</div>
+                <canvas id="topPredictedChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Top 10 Productos con Mayor Diferencia</div>
+                <canvas id="topDiffChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container full-width">
+            <div class="chart-title">Top 10 Productos con Mayor Venta Estimada</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Venta Estimada</th>
+                        <th>Venta Real</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td>1</td>
+            <td>Producto Alimentos 6</td>
+            <td>Alimentos</td>
+            <td>$17,230.39</td>
+            <td>$18,557.30</td>
+        </tr>
+        
+        <tr>
+            <td>2</td>
+            <td>Producto Alimentos 2</td>
+            <td>Alimentos</td>
+            <td>$17,080.67</td>
+            <td>$12,748.30</td>
+        </tr>
+        
+        <tr>
+            <td>3</td>
+            <td>Producto Alimentos 5</td>
+            <td>Alimentos</td>
+            <td>$12,069.18</td>
+            <td>$15,135.02</td>
+        </tr>
+        
+        <tr>
+            <td>4</td>
+            <td>Producto Bebidas 6</td>
+            <td>Bebidas</td>
+            <td>$9,964.20</td>
+            <td>$3,206.85</td>
+        </tr>
+        
+        <tr>
+            <td>5</td>
+            <td>Producto Bebidas 1</td>
+            <td>Bebidas</td>
+            <td>$9,703.08</td>
+            <td>$3,606.76</td>
+        </tr>
+        
+        <tr>
+            <td>6</td>
+            <td>Producto Bebidas 2</td>
+            <td>Bebidas</td>
+            <td>$8,525.94</td>
+            <td>$5,902.86</td>
+        </tr>
+        
+        <tr>
+            <td>7</td>
+            <td>Producto Limpieza 5</td>
+            <td>Limpieza</td>
+            <td>$8,411.23</td>
+            <td>$11,808.04</td>
+        </tr>
+        
+        <tr>
+            <td>8</td>
+            <td>Producto Alimentos 4</td>
+            <td>Alimentos</td>
+            <td>$8,053.41</td>
+            <td>$6,152.42</td>
+        </tr>
+        
+        <tr>
+            <td>9</td>
+            <td>Producto Alimentos 3</td>
+            <td>Alimentos</td>
+            <td>$8,050.38</td>
+            <td>$6,782.14</td>
+        </tr>
+        
+        <tr>
+            <td>10</td>
+            <td>Producto Alimentos 1</td>
+            <td>Alimentos</td>
+            <td>$7,177.71</td>
+            <td>$5,656.72</td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+
+        <div class="chart-container full-width">
+            <div class="chart-title">Top 10 Productos con Mayor Diferencia (Real vs. Predicho)</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Diferencia Abs.</th>
+                        <th>Diferencia %</th>
+                        <th>Venta Real</th>
+                        <th>Venta Predicha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td>1</td>
+            <td>Producto Electrodomésticos 4</td>
+            <td>Electrodomésticos</td>
+            <td>$55,207.71</td>
+            <td>93.81%</td>
+            <td>$58,848.15</td>
+            <td>$3,640.44</td>
+        </tr>
+        
+        <tr>
+            <td>2</td>
+            <td>Producto Electrodomésticos 2</td>
+            <td>Electrodomésticos</td>
+            <td>$39,656.47</td>
+            <td>96.56%</td>
+            <td>$41,067.53</td>
+            <td>$1,411.06</td>
+        </tr>
+        
+        <tr>
+            <td>3</td>
+            <td>Producto Electrodomésticos 6</td>
+            <td>Electrodomésticos</td>
+            <td>$37,933.82</td>
+            <td>93.93%</td>
+            <td>$40,384.66</td>
+            <td>$2,450.84</td>
+        </tr>
+        
+        <tr>
+            <td>4</td>
+            <td>Producto Electrodomésticos 3</td>
+            <td>Electrodomésticos</td>
+            <td>$33,660.02</td>
+            <td>93.94%</td>
+            <td>$35,832.03</td>
+            <td>$2,172.01</td>
+        </tr>
+        
+        <tr>
+            <td>5</td>
+            <td>Producto Electrodomésticos 5</td>
+            <td>Electrodomésticos</td>
+            <td>$24,731.49</td>
+            <td>92.84%</td>
+            <td>$26,638.79</td>
+            <td>$1,907.30</td>
+        </tr>
+        
+        <tr>
+            <td>6</td>
+            <td>Producto Electrodomésticos 1</td>
+            <td>Electrodomésticos</td>
+            <td>$9,095.09</td>
+            <td>92.00%</td>
+            <td>$9,885.58</td>
+            <td>$790.49</td>
+        </tr>
+        
+        <tr>
+            <td>7</td>
+            <td>Producto Cuidado Personal 3</td>
+            <td>Cuidado Personal</td>
+            <td>$7,249.42</td>
+            <td>64.30%</td>
+            <td>$11,274.07</td>
+            <td>$4,325.82</td>
+        </tr>
+        
+        <tr>
+            <td>8</td>
+            <td>Producto Bebidas 6</td>
+            <td>Bebidas</td>
+            <td>$6,757.35</td>
+            <td>210.72%</td>
+            <td>$3,206.85</td>
+            <td>$9,964.20</td>
+        </tr>
+        
+        <tr>
+            <td>9</td>
+            <td>Producto Cuidado Personal 2</td>
+            <td>Cuidado Personal</td>
+            <td>$6,175.10</td>
+            <td>49.47%</td>
+            <td>$12,482.45</td>
+            <td>$7,047.86</td>
+        </tr>
+        
+        <tr>
+            <td>10</td>
+            <td>Producto Bebidas 1</td>
+            <td>Bebidas</td>
+            <td>$6,126.48</td>
+            <td>169.86%</td>
+            <td>$3,606.76</td>
+            <td>$9,703.08</td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+
+        <div class="insights">
+            <h2>Conclusiones: Oportunidades, Riesgos y Recomendaciones</h2>
+            <h3>🚀 Oportunidades</h3>
+            <ul>
+                <li><strong>Mayor potencial de ventas:</strong> Alimentos con $69,661.74 estimados; priorizar inventario y promociones.</li><li><strong>Zona más valiosa:</strong> Guayaquil ($75,850.42 predichas), candidata a campañas focalizadas.</li><li><strong>Producto más prometedor:</strong> Producto Alimentos 6 con $17,230.39 en ventas estimadas.</li><li><strong>Mejor mes predicho:</strong> Febrero (error 125.59%), aprovechar para lanzamientos.</li>
+            </ul>
+            <h3>⚠️ Riesgos</h3>
+            <ul>
+                <li><strong>Diferencia total:</strong> el modelo subestima las ventas en un 52.18%.</li><li><strong>Peor mes predicho:</strong> Junio con error promedio de 298.03%.</li><li><strong>Categoría menos precisa:</strong> Bebidas (error 436.51%).</li><li><strong>Zona menos precisa:</strong> Ambato (error 235.25%).</li><li><strong>Categorías con alto riesgo de error:</strong> Alimentos, Bebidas, Cuidado Personal, Electrodomésticos, Limpieza requieren revisión de variables o más datos.</li><li><strong>Zonas con alto riesgo de error:</strong> Ambato, Cuenca, Guayaquil, Manta, Quito; validar comportamiento regional.</li><li><strong>Producto con mayor desviación:</strong> Producto Electrodomésticos 4 con $55,207.71 de diferencia acumulada.</li>
+            </ul>
+            <h3>💡 Recomendaciones Comerciales</h3>
+            <ul>
+                <li>Revisar el modelo para categorías y zonas con error >50%; podría necesitarse ingeniería de características o más registros históricos.</li><li>Ajustar inventarios y compras en función de las predicciones por categoría, especialmente en los productos top 10 estimados.</li><li>Diseñar promociones locales en las zonas con mayores ventas predichas (Guayaquil y Quito) para maximizar el retorno.</li><li>Investigar los productos con mayor diferencia absoluta; pueden indicar eventos puntuales, datos atípicos o limitaciones del modelo.</li><li>Usar el dashboard mensual para calibrar metas de ventas y alertas tempranas cuando las predicciones se desvíen del real.</li>
+            </ul>
+        </div>
+
+        <footer>
+            Generado automáticamente por dashboard_prediccion.py · MLNETModelBuilder-PowerBI
+        </footer>
+    </div>
+
+    <script>
+        const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        const realMonthly = [33562.1, 19848.83, 33285.09, 25680.41, 26849.66, 27189.64, 31905.78, 20805.89, 16847.06, 19436.75, 71743.09, 64292.76];
+        const predictedMonthly = [13310.4, 11048.26, 13449.45, 11560.61, 12387.79, 12808.93, 12562.39, 11836.02, 12378.31, 12726.67, 30905.48, 32200.82];
+        const errorMonthly = [172.19, 125.59, 196.14, 275.76, 202.35, 298.03, 139.2, 215.58, 231.18, 166.17, 231.69, 199.09];
+
+        const categories = ['Alimentos', 'Bebidas', 'Cuidado Personal', 'Electrodomésticos', 'Limpieza'];
+        const realCategory = [65031.9, 20571.94, 46140.72, 212656.74, 47045.76];
+        const predictedCategory = [69661.74, 44703.99, 27217.12, 12372.14, 33220.14];
+        const errorCategory = [120.51, 436.51, 66.77, 89.23, 58.83];
+
+        const zones = ['Ambato', 'Cuenca', 'Guayaquil', 'Manta', 'Quito'];
+        const realZone = [11311.53, 66983.17, 155542.0, 36155.82, 121454.54];
+        const predictedZone = [7828.12, 25773.42, 75850.42, 20029.99, 57693.18];
+        const errorZone = [235.25, 205.6, 198.29, 216.52, 209.95];
+
+        const topPredictedLabels = ['Producto Alimentos 6', 'Producto Alimentos 2', 'Producto Alimentos 5', 'Producto Bebidas 6', 'Producto Bebidas 1', 'Producto Bebidas 2', 'Producto Limpieza 5', 'Producto Alimentos 4', 'Producto Alimentos 3', 'Producto Alimentos 1'];
+        const topPredictedValues = [17230.39, 17080.67, 12069.18, 9964.2, 9703.08, 8525.94, 8411.23, 8053.41, 8050.38, 7177.71];
+
+        const topDiffLabels = ['Producto Electrodomésticos 4', 'Producto Electrodomésticos 2', 'Producto Electrodomésticos 6', 'Producto Electrodomésticos 3', 'Producto Electrodomésticos 5', 'Producto Electrodomésticos 1', 'Producto Cuidado Personal 3', 'Producto Bebidas 6', 'Producto Cuidado Personal 2', 'Producto Bebidas 1'];
+        const topDiffValues = [55207.71, 39656.47, 37933.82, 33660.02, 24731.49, 9095.09, 7249.42, 6757.35, 6175.1, 6126.48];
+
+        const formatCurrency = (value) => '$' + value.toLocaleString();
+
+        // Ventas reales vs predichas por mes
+        new Chart(document.getElementById('salesMonthChart'), {
+            type: 'bar',
+            data: {
+                labels: months,
+                datasets: [
+                    {
+                        label: 'Ventas Reales',
+                        data: realMonthly,
+                        backgroundColor: '#2563eb',
+                        borderRadius: 6
+                    },
+                    {
+                        label: 'Ventas Predichas',
+                        data: predictedMonthly,
+                        backgroundColor: '#16a34a',
+                        borderRadius: 6
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { callback: formatCurrency }
+                    }
+                }
+            }
+        });
+
+        // Error promedio por mes
+        new Chart(document.getElementById('errorMonthChart'), {
+            type: 'line',
+            data: {
+                labels: months,
+                datasets: [{
+                    label: 'Error Promedio (%)',
+                    data: errorMonthly,
+                    borderColor: '#dc2626',
+                    backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#dc2626'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true, ticks: { callback: v => v + '%' } }
+                }
+            }
+        });
+
+        // Predicción por categoría
+        new Chart(document.getElementById('categoryChart'), {
+            type: 'bar',
+            data: {
+                labels: categories,
+                datasets: [
+                    {
+                        label: 'Ventas Reales',
+                        data: realCategory,
+                        backgroundColor: '#2563eb',
+                        borderRadius: 6
+                    },
+                    {
+                        label: 'Ventas Predichas',
+                        data: predictedCategory,
+                        backgroundColor: '#16a34a',
+                        borderRadius: 6
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { callback: formatCurrency }
+                    }
+                }
+            }
+        });
+
+        // Error por categoría
+        new Chart(document.getElementById('errorCategoryChart'), {
+            type: 'bar',
+            data: {
+                labels: categories,
+                datasets: [{
+                    label: 'Error Promedio (%)',
+                    data: errorCategory,
+                    backgroundColor: errorCategory.map(v => v < 30 ? '#16a34a' : v < 50 ? '#ca8a04' : '#dc2626'),
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, ticks: { callback: v => v + '%' } }
+                }
+            }
+        });
+
+        // Predicción por zona
+        new Chart(document.getElementById('zoneChart'), {
+            type: 'bar',
+            data: {
+                labels: zones,
+                datasets: [
+                    {
+                        label: 'Ventas Reales',
+                        data: realZone,
+                        backgroundColor: '#7c3aed',
+                        borderRadius: 6
+                    },
+                    {
+                        label: 'Ventas Predichas',
+                        data: predictedZone,
+                        backgroundColor: '#06b6d4',
+                        borderRadius: 6
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { callback: formatCurrency }
+                    }
+                }
+            }
+        });
+
+        // Error por zona
+        new Chart(document.getElementById('errorZoneChart'), {
+            type: 'bar',
+            data: {
+                labels: zones,
+                datasets: [{
+                    label: 'Error Promedio (%)',
+                    data: errorZone,
+                    backgroundColor: errorZone.map(v => v < 30 ? '#16a34a' : v < 50 ? '#ca8a04' : '#dc2626'),
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, ticks: { callback: v => v + '%' } }
+                }
+            }
+        });
+
+        // Top 10 productos con mayor venta estimada
+        new Chart(document.getElementById('topPredictedChart'), {
+            type: 'bar',
+            data: {
+                labels: topPredictedLabels,
+                datasets: [{
+                    label: 'Venta Estimada',
+                    data: topPredictedValues,
+                    backgroundColor: '#16a34a',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: { callback: formatCurrency }
+                    }
+                }
+            }
+        });
+
+        // Top 10 productos con mayor diferencia
+        new Chart(document.getElementById('topDiffChart'), {
+            type: 'bar',
+            data: {
+                labels: topDiffLabels,
+                datasets: [{
+                    label: 'Diferencia Absoluta',
+                    data: topDiffValues,
+                    backgroundColor: '#dc2626',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: { callback: formatCurrency }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

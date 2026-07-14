@@ -27,6 +27,8 @@ Archivos principales en la raíz:
 | `temp_docx/` | Extracción XML del contenido de un documento Word. |
 | `SalesPrediction1/` | Proyecto de consola **.NET Framework 4.8.1** generado por ML.NET Model Builder (contiene un modelo ya entrenado). |
 | `SalesPredictionApp/` | Proyecto de consola **.NET 10** en formato SDK, plantilla para generar predicciones masivas. |
+| `dashboard_prediccion.py` | Script Python que genera un dashboard HTML interactivo a partir de `resultados_prediccion.csv`. |
+| `dashboard_prediccion.html` | Dashboard web con KPIs, gráficos por mes/categoría/zona y conclusiones comerciales. |
 
 ## 2. Stack tecnológico
 
@@ -37,6 +39,7 @@ Archivos principales en la raíz:
 - **ML.NET / ML.NET AutoML** para el entrenamiento y consumo del modelo de regresión.
 - **Plotly.NET** (aparece en `SalesPrediction.evaluate.cs`) para graficar predicciones vs. valores reales.
 - **CSV/Excel/Power BI** como formato de datos y visualización final.
+- **Chart.js** para los gráficos del dashboard HTML (`dashboard_prediccion.html`).
 - **Visual Studio 2026** (versión 18.x) es el IDE recomendado; Model Builder solo funciona en Visual Studio para Windows.
 
 ## 3. Estructura y organización del código
@@ -62,7 +65,9 @@ MLNETModelBuilder-PowerBI/
 │   └── SalesPredictionApp.sln
 ├── generate_synthetic_sales.py
 ├── ventas_sinteticas_2025.csv
-└── resultados_prediccion.csv
+├── resultados_prediccion.csv
+├── dashboard_prediccion.py
+└── dashboard_prediccion.html
 ```
 
 ### 3.1. `SalesPrediction1`
@@ -134,6 +139,24 @@ El archivo se crea en la raíz del repositorio con las columnas:
 sale_date,product_name,category_name,zone_name,salesman_name,warehouse_name,real_sales,predicted_sales,difference,percentage_error
 ```
 
+### 4.4. Generar el dashboard HTML
+
+Una vez exista `resultados_prediccion.csv`:
+
+```bash
+python dashboard_prediccion.py
+```
+
+Esto genera `dashboard_prediccion.html` con:
+
+- KPIs generales (ventas reales vs. predichas, error promedio, R², MAE, RMSE).
+- Gráficos de ventas reales vs. predichas por mes.
+- Error promedio por mes.
+- Predicción por categoría y por zona.
+- Top 10 productos con mayor venta estimada.
+- Top 10 productos con mayor diferencia entre real y predicho.
+- Conclusiones automáticas sobre oportunidades, riesgos y recomendaciones comerciales.
+
 ### 4.4. Compilar `SalesPrediction1`
 
 - Requiere Visual Studio con la carga de trabajo de **.NET Framework** y los paquetes NuGet que Model Builder debería haber agregado.
@@ -166,7 +189,8 @@ No hay proyectos de pruebas unitarias. Las validaciones son manuales:
 2. **Compilación**: `dotnet build` debe terminar sin errores (posiblemente usando `-p:UseAppHost=false`).
 3. **Ejecución**: `dotnet run` debe crear `resultados_prediccion.csv` con 3.000 filas + encabezado.
 4. **Métricas del modelo**: en ML.NET Model Builder revisar R², RMSE y MAE en la pestaña **Evaluar**.
-5. **Dashboard**: el archivo Excel/Power BI debe comparar real vs. predicho por mes, categoría y zona.
+5. **Dashboard HTML**: ejecutar `python dashboard_prediccion.py` debe generar `dashboard_prediccion.html` con todos los KPIs, gráficos y conclusiones solicitadas.
+6. **Dashboard Excel/Power BI**: el archivo `.xlsx` o `.pbix` debe comparar real vs. predicho por mes, categoría y zona.
 
 ## 7. Consideraciones de seguridad
 

@@ -1,0 +1,736 @@
+﻿{
+  "Scenario": "Regression",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "G:\\My Drive\\estudios\\ecotec\\docencia\\Modelos de Datos\\MLNETModelBuilder-PowerBI\\ventas_sinteticas_2025.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "sale_id",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "sale_date",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "year_number",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "month_number",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "day_number",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "day_of_week",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "customer_code",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "customer_name",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "product_code",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "product_name",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "category_name",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "zone_name",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "salesman_name",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "warehouse_name",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "quantity",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "unit_price",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "discount_percentage",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "total_sales",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.95462871346803335,
+        "RuntimeInSeconds": 160.397,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * e13",
+          "e0": {
+            "OutputColumnNames": [
+              "category_name",
+              "zone_name"
+            ],
+            "InputColumnNames": [
+              "category_name",
+              "zone_name"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage"
+            ],
+            "InputColumnNames": [
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage"
+            ]
+          },
+          "e10": {
+            "InputColumnNames": [
+              "category_name",
+              "zone_name",
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage",
+              "sale_id",
+              "sale_date",
+              "customer_code",
+              "customer_name",
+              "product_code",
+              "product_name",
+              "salesman_name",
+              "warehouse_name"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e13": {
+            "NumberOfLeaves": 6076,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 0.99999977667298645,
+            "NumberOfTrees": 4273,
+            "SubsampleFraction": 0.11399600783512628,
+            "MaximumBinCountPerFeature": 399,
+            "FeatureFraction": 0.99999999,
+            "L1Regularization": 3.8099186191820129E-10,
+            "L2Regularization": 0.1160661754740924,
+            "LabelColumnName": "total_sales",
+            "FeatureColumnName": "Features"
+          },
+          "e2": {
+            "InputColumnName": "sale_id",
+            "OutputColumnName": "sale_id"
+          },
+          "e3": {
+            "InputColumnName": "sale_date",
+            "OutputColumnName": "sale_date"
+          },
+          "e4": {
+            "InputColumnName": "customer_code",
+            "OutputColumnName": "customer_code"
+          },
+          "e5": {
+            "InputColumnName": "customer_name",
+            "OutputColumnName": "customer_name"
+          },
+          "e6": {
+            "InputColumnName": "product_code",
+            "OutputColumnName": "product_code"
+          },
+          "e7": {
+            "InputColumnName": "product_name",
+            "OutputColumnName": "product_name"
+          },
+          "e8": {
+            "InputColumnName": "salesman_name",
+            "OutputColumnName": "salesman_name"
+          },
+          "e9": {
+            "InputColumnName": "warehouse_name",
+            "OutputColumnName": "warehouse_name"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.9522545286480909,
+        "RuntimeInSeconds": 75.703,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * e13",
+          "e0": {
+            "OutputColumnNames": [
+              "category_name",
+              "zone_name"
+            ],
+            "InputColumnNames": [
+              "category_name",
+              "zone_name"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage"
+            ],
+            "InputColumnNames": [
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage"
+            ]
+          },
+          "e10": {
+            "InputColumnNames": [
+              "category_name",
+              "zone_name",
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage",
+              "sale_id",
+              "sale_date",
+              "customer_code",
+              "customer_name",
+              "product_code",
+              "product_name",
+              "salesman_name",
+              "warehouse_name"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e13": {
+            "NumberOfLeaves": 3035,
+            "MinimumExampleCountPerLeaf": 22,
+            "LearningRate": 0.59706233461905467,
+            "NumberOfTrees": 782,
+            "SubsampleFraction": 0.96777614465599981,
+            "MaximumBinCountPerFeature": 448,
+            "FeatureFraction": 0.99992630602757637,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 0.99999977667298645,
+            "LabelColumnName": "total_sales",
+            "FeatureColumnName": "Features"
+          },
+          "e2": {
+            "InputColumnName": "sale_id",
+            "OutputColumnName": "sale_id"
+          },
+          "e3": {
+            "InputColumnName": "sale_date",
+            "OutputColumnName": "sale_date"
+          },
+          "e4": {
+            "InputColumnName": "customer_code",
+            "OutputColumnName": "customer_code"
+          },
+          "e5": {
+            "InputColumnName": "customer_name",
+            "OutputColumnName": "customer_name"
+          },
+          "e6": {
+            "InputColumnName": "product_code",
+            "OutputColumnName": "product_code"
+          },
+          "e7": {
+            "InputColumnName": "product_name",
+            "OutputColumnName": "product_name"
+          },
+          "e8": {
+            "InputColumnName": "salesman_name",
+            "OutputColumnName": "salesman_name"
+          },
+          "e9": {
+            "InputColumnName": "warehouse_name",
+            "OutputColumnName": "warehouse_name"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.9361442415239456,
+        "RuntimeInSeconds": 11.137,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * e13",
+          "e0": {
+            "OutputColumnNames": [
+              "category_name",
+              "zone_name"
+            ],
+            "InputColumnNames": [
+              "category_name",
+              "zone_name"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage"
+            ],
+            "InputColumnNames": [
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage"
+            ]
+          },
+          "e10": {
+            "InputColumnNames": [
+              "category_name",
+              "zone_name",
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage",
+              "sale_id",
+              "sale_date",
+              "customer_code",
+              "customer_name",
+              "product_code",
+              "product_name",
+              "salesman_name",
+              "warehouse_name"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e13": {
+            "NumberOfLeaves": 1598,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 0.799938729319013,
+            "NumberOfTrees": 15,
+            "SubsampleFraction": 0.99999977667298645,
+            "MaximumBinCountPerFeature": 278,
+            "FeatureFraction": 0.9540249878471595,
+            "L1Regularization": 2.7222915603411459E-10,
+            "L2Regularization": 0.99999977667298645,
+            "LabelColumnName": "total_sales",
+            "FeatureColumnName": "Features"
+          },
+          "e2": {
+            "InputColumnName": "sale_id",
+            "OutputColumnName": "sale_id"
+          },
+          "e3": {
+            "InputColumnName": "sale_date",
+            "OutputColumnName": "sale_date"
+          },
+          "e4": {
+            "InputColumnName": "customer_code",
+            "OutputColumnName": "customer_code"
+          },
+          "e5": {
+            "InputColumnName": "customer_name",
+            "OutputColumnName": "customer_name"
+          },
+          "e6": {
+            "InputColumnName": "product_code",
+            "OutputColumnName": "product_code"
+          },
+          "e7": {
+            "InputColumnName": "product_name",
+            "OutputColumnName": "product_name"
+          },
+          "e8": {
+            "InputColumnName": "salesman_name",
+            "OutputColumnName": "salesman_name"
+          },
+          "e9": {
+            "InputColumnName": "warehouse_name",
+            "OutputColumnName": "warehouse_name"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.91410610496209621,
+        "RuntimeInSeconds": 8.92,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * e13",
+          "e0": {
+            "OutputColumnNames": [
+              "category_name",
+              "zone_name"
+            ],
+            "InputColumnNames": [
+              "category_name",
+              "zone_name"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage"
+            ],
+            "InputColumnNames": [
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage"
+            ]
+          },
+          "e10": {
+            "InputColumnNames": [
+              "category_name",
+              "zone_name",
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage",
+              "sale_id",
+              "sale_date",
+              "customer_code",
+              "customer_name",
+              "product_code",
+              "product_name",
+              "salesman_name",
+              "warehouse_name"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e13": {
+            "NumberOfLeaves": 160,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 0.99999977667298645,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 0.99999977667298645,
+            "MaximumBinCountPerFeature": 172,
+            "FeatureFraction": 0.90812366966674274,
+            "L1Regularization": 1.6896390805530825E-09,
+            "L2Regularization": 0.58123378027405781,
+            "LabelColumnName": "total_sales",
+            "FeatureColumnName": "Features"
+          },
+          "e2": {
+            "InputColumnName": "sale_id",
+            "OutputColumnName": "sale_id"
+          },
+          "e3": {
+            "InputColumnName": "sale_date",
+            "OutputColumnName": "sale_date"
+          },
+          "e4": {
+            "InputColumnName": "customer_code",
+            "OutputColumnName": "customer_code"
+          },
+          "e5": {
+            "InputColumnName": "customer_name",
+            "OutputColumnName": "customer_name"
+          },
+          "e6": {
+            "InputColumnName": "product_code",
+            "OutputColumnName": "product_code"
+          },
+          "e7": {
+            "InputColumnName": "product_name",
+            "OutputColumnName": "product_name"
+          },
+          "e8": {
+            "InputColumnName": "salesman_name",
+            "OutputColumnName": "salesman_name"
+          },
+          "e9": {
+            "InputColumnName": "warehouse_name",
+            "OutputColumnName": "warehouse_name"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.90912252297366136,
+        "RuntimeInSeconds": 5.542,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * e12",
+          "e0": {
+            "OutputColumnNames": [
+              "category_name",
+              "zone_name"
+            ],
+            "InputColumnNames": [
+              "category_name",
+              "zone_name"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage"
+            ],
+            "InputColumnNames": [
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage"
+            ]
+          },
+          "e10": {
+            "InputColumnNames": [
+              "category_name",
+              "zone_name",
+              "year_number",
+              "month_number",
+              "day_number",
+              "day_of_week",
+              "quantity",
+              "unit_price",
+              "discount_percentage",
+              "sale_id",
+              "sale_date",
+              "customer_code",
+              "customer_name",
+              "product_code",
+              "product_name",
+              "salesman_name",
+              "warehouse_name"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e12": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 7,
+            "FeatureFraction": 0.9430556,
+            "LabelColumnName": "total_sales",
+            "FeatureColumnName": "Features"
+          },
+          "e2": {
+            "InputColumnName": "sale_id",
+            "OutputColumnName": "sale_id"
+          },
+          "e3": {
+            "InputColumnName": "sale_date",
+            "OutputColumnName": "sale_date"
+          },
+          "e4": {
+            "InputColumnName": "customer_code",
+            "OutputColumnName": "customer_code"
+          },
+          "e5": {
+            "InputColumnName": "customer_name",
+            "OutputColumnName": "customer_name"
+          },
+          "e6": {
+            "InputColumnName": "product_code",
+            "OutputColumnName": "product_code"
+          },
+          "e7": {
+            "InputColumnName": "product_name",
+            "OutputColumnName": "product_name"
+          },
+          "e8": {
+            "InputColumnName": "salesman_name",
+            "OutputColumnName": "salesman_name"
+          },
+          "e9": {
+            "InputColumnName": "warehouse_name",
+            "OutputColumnName": "warehouse_name"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "OneHotEncoding",
+      "e1": "ReplaceMissingValues",
+      "e2": "FeaturizeText",
+      "e3": "FeaturizeText",
+      "e4": "FeaturizeText",
+      "e5": "FeaturizeText",
+      "e6": "FeaturizeText",
+      "e7": "FeaturizeText",
+      "e8": "FeaturizeText",
+      "e9": "FeaturizeText",
+      "e10": "Concatenate",
+      "e11": "FastTreeRegression",
+      "e12": "FastForestRegression",
+      "e13": "LightGbmRegression",
+      "e14": "LbfgsPoissonRegressionRegression",
+      "e15": "SdcaRegression"
+    },
+    "Schema": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * (e11 + e12 + e13 + e14 + e15)",
+    "MetricName": "RSquared",
+    "ModelFilePath": "G:\\My Drive\\estudios\\ecotec\\docencia\\Modelos de Datos\\MLNETModelBuilder-PowerBI\\train\\SalesPredict\\SalesPredict.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Type": "RegressionTrainingOption",
+    "TrainingTime": 600,
+    "LabelColumn": "total_sales",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}
