@@ -4,20 +4,34 @@ using System.Globalization;
 
 Console.WriteLine("Iniciando generación de predicciones con el modelo ML.NET...");
 
-// Rutas a los archivos. Al ejecutar desde VS suele correr en bin/Debug/net10.0/
-string inputCsvPath = @"..\..\..\..\ventas_sinteticas_2025.csv";
-string outputCsvPath = @"..\..\..\..\resultados_prediccion.csv";
+// Determinar rutas de entrada y salida
+// Uso: dotnet run -- <input.csv> <output.csv>
+// Si no se especifican, usa los valores por defecto.
+string inputCsvPath;
+string outputCsvPath;
 
-if (!File.Exists(inputCsvPath))
+if (args.Length >= 2)
 {
-    // Respaldo por si se ejecuta directamente en la raíz de la carpeta
-    inputCsvPath = @"..\ventas_sinteticas_2025.csv";
-    outputCsvPath = @"..\resultados_prediccion.csv";
+    inputCsvPath = args[0];
+    outputCsvPath = args[1];
+}
+else
+{
+    // Rutas por defecto. Al ejecutar desde VS suele correr en bin/Debug/net10.0/
+    inputCsvPath = @"..\..\..\..\ventas_sinteticas_2025.csv";
+    outputCsvPath = @"..\..\..\..\resultados_prediccion.csv";
+
+    if (!File.Exists(inputCsvPath))
+    {
+        // Respaldo por si se ejecuta directamente en la raíz de la carpeta
+        inputCsvPath = @"..\ventas_sinteticas_2025.csv";
+        outputCsvPath = @"..\resultados_prediccion.csv";
+    }
 }
 
 if (!File.Exists(inputCsvPath))
 {
-    Console.WriteLine("Error: No se encontró el archivo 'ventas_sinteticas_2025.csv'. Verifica la ruta.");
+    Console.WriteLine($"Error: No se encontró el archivo de entrada '{inputCsvPath}'. Verifica la ruta.");
     return;
 }
 
