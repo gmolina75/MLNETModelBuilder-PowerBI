@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Globalization;
 
-Console.WriteLine("Iniciando generación de predicciones...");
+Console.WriteLine("Iniciando generación de predicciones con el modelo ML.NET...");
 
 // Rutas a los archivos. Al ejecutar desde VS suele correr en bin/Debug/net10.0/
 string inputCsvPath = @"..\..\..\..\ventas_sinteticas_2025.csv";
@@ -32,11 +32,9 @@ if (lines.Length <= 1)
 var outDir = Path.GetDirectoryName(outputCsvPath);
 if (!string.IsNullOrEmpty(outDir)) Directory.CreateDirectory(outDir);
 
-var rng = new Random();
-
 using (var writer = new StreamWriter(outputCsvPath))
 {
-    // Escribir el nuevo encabezado según la rúbrica (Punto 8)
+    // Escribir el nuevo encabezado según la rúbrica
     writer.WriteLine("sale_date,product_name,category_name,zone_name,salesman_name,warehouse_name,real_sales,predicted_sales,difference,percentage_error");
 
     // Iterar a partir de la fila 1 para saltarse el encabezado original
@@ -55,23 +53,20 @@ using (var writer = new StreamWriter(outputCsvPath))
         string salesmanName = cols[12];
         string warehouseName = cols[13];
 
-        if (!float.TryParse(cols[17], NumberStyles.Float, CultureInfo.InvariantCulture, out float realSales))
-        {
-            realSales = 0f;
-        }
+        if (!float.TryParse(cols[14], NumberStyles.Float, CultureInfo.InvariantCulture, out float quantity)) quantity = 0f;
+        if (!float.TryParse(cols[15], NumberStyles.Float, CultureInfo.InvariantCulture, out float unitPrice)) unitPrice = 0f;
+        if (!float.TryParse(cols[16], NumberStyles.Float, CultureInfo.InvariantCulture, out float discountPercentage)) discountPercentage = 0f;
+        if (!float.TryParse(cols[17], NumberStyles.Float, CultureInfo.InvariantCulture, out float realSales)) realSales = 0f;
 
-        /* 
-        // =========================================================================
-        // IMPORTANTE: DESCOMENTA ESTE BLOQUE CUANDO HAYAS CREADO EL MODELO ML.NET 
-        // Asumiendo que nombraste a tu modelo "SalesModel.mbconfig"
-        // =========================================================================
-        var sampleData = new SalesModel.ModelInput()
+        // Crear el input para el modelo ML.NET
+        var sampleData = new SalesPredict.SalesPredict.ModelInput()
         {
+            Sale_id = cols[0],
             Sale_date = cols[1],
-            Year_number = float.Parse(cols[2]),
-            Month_number = float.Parse(cols[3]),
-            Day_number = float.Parse(cols[4]),
-            Day_of_week = float.Parse(cols[5]),
+            Year_number = float.Parse(cols[2], CultureInfo.InvariantCulture),
+            Month_number = float.Parse(cols[3], CultureInfo.InvariantCulture),
+            Day_number = float.Parse(cols[4], CultureInfo.InvariantCulture),
+            Day_of_week = float.Parse(cols[5], CultureInfo.InvariantCulture),
             Customer_code = cols[6],
             Customer_name = cols[7],
             Product_code = cols[8],
@@ -80,22 +75,15 @@ using (var writer = new StreamWriter(outputCsvPath))
             Zone_name = cols[11],
             Salesman_name = cols[12],
             Warehouse_name = cols[13],
-            Quantity = float.Parse(cols[14]),
-            Unit_price = float.Parse(cols[15], CultureInfo.InvariantCulture),
-            Discount_percentage = float.Parse(cols[16])
+            Quantity = quantity,
+            Unit_price = unitPrice,
+            Discount_percentage = discountPercentage,
+            Total_sales = realSales
         };
 
         // Realizar la predicción consumiendo el modelo generado
-        var result = SalesModel.Predict(sampleData);
-        float predictedSales = result.Score; 
-        // =========================================================================
-        */
-
-        // --- INICIO SIMULACIÓN TEMPORAL (ELIMINAR AL DESCOMENTAR EL BLOQUE SUPERIOR) ---
-        // Genero una predicción simulada (con +- 5% de error) para que tu código 
-        // compile ahora mismo y puedas probar cómo se genera el CSV de resultados.
-        float predictedSales = realSales * (1.0f + (float)(rng.NextDouble() * 0.1 - 0.05));
-        // --- FIN SIMULACIÓN TEMPORAL ---
+        var result = SalesPredict.SalesPredict.Predict(sampleData);
+        float predictedSales = result.Score;
 
         // Calcular la diferencia y el porcentaje de error
         float difference = Math.Abs(realSales - predictedSales);
