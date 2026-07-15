@@ -344,3 +344,4 @@ desktop.ini
 
 # Archivos de resultados generados por la aplicación (opcional, descomenta si no quieres versionarlos)
 # resultados_prediccion.csv
+*_backup.pptx
